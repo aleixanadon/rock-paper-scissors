@@ -1,8 +1,11 @@
-import React from 'react'
 
 const PlayerChoice = () => {
   return (
-    <div>PlayerChoice</div>
+    <div className="playerChoice">
+      <button>👊</button>
+      <button>🖐</button>
+      <button>✌️</button>
+    </div>
   )
 }
 

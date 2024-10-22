@@ -1,8 +1,20 @@
-import React from 'react'
+import { RootState } from "../../../../store"
+import { useSelector } from "react-redux"
 
 const Scoreboard = () => {
+
+  const { 
+    playerScore, 
+    numOfDraw, 
+    botScore 
+  } = useSelector((state: RootState) => state.game)
+
   return (
-    <div>Scoreboard</div>
+    <div className="scoreboard">
+      <div>You: {playerScore}</div>
+      <div>Draws: {numOfDraw}</div>
+      <div>Bot: {botScore}</div>
+    </div>
   )
 }
 
