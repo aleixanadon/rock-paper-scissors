@@ -1,0 +1,14 @@
+
+.player-choice {
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+.choice-btn {
+    padding: 2em;
+    border-radius: 10px;
+    border-width: 0;
+    box-shadow: 2px 2px rgb(194, 194, 194);
+    font-size: 0.9em;
+}

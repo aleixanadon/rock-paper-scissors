@@ -1,22 +1,27 @@
-import { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { decrementScore, incrementScore, setBotResult,  } from '../gameSlice';
 
 const useGame = () => {
+  
+  const dispatch = useDispatch();
 
-  const [playerPoints, setPlayerPoints] = useState<number>(0);
-  const [botPoints, setBotPoints] = useState<number>(0);
-  const [draws, setDraws] = useState<number>(0);
+  const incrementScoreBy = (who: 'player' | 'bot' | 'draw') => {
+    dispatch(incrementScore({who}))
+  }
 
-  const addPlayerPoints = () => { setPlayerPoints(playerPoints+1) };
-  const addBotPoints = () => { setBotPoints(botPoints+1) };
-  const addDraws = () => { setDraws(draws+1) };
+  const decrementScoreBy = (who: 'player' | 'bot' | 'draw') => {
+    dispatch(decrementScore({who}))
+  }
+
+  const getBotResult = () => {
+    let botResult = Math.floor((Math.random() * 3) + 1);
+    dispatch(setBotResult(botResult));
+  }
 
   return {
-    playerPoints,
-    botPoints,
-    draws,
-    addPlayerPoints,
-    addBotPoints,
-    addDraws,
+    incrementScoreBy,
+    decrementScoreBy,
+    getBotResult,
   }
 }
 

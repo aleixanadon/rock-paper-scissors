@@ -6,9 +6,9 @@ function App() {
   return (
     <main>
       <Scoreboard />
-      <div>
+      <div className='game'>
         <div className='bot'>👻</div>
-        <div>Rock, paper, scissors? </div>
+        <div className='question'>Rock, paper, scissors? </div>
         <PlayerChoice />
       </div>
       <div></div>

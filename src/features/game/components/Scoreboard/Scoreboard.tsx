@@ -1,3 +1,4 @@
+import './scoreboard.css'
 import { RootState } from "../../../../store"
 import { useSelector } from "react-redux"
 
@@ -11,9 +12,9 @@ const Scoreboard = () => {
 
   return (
     <div className="scoreboard">
-      <div>You: {playerScore}</div>
-      <div>Draws: {numOfDraw}</div>
-      <div>Bot: {botScore}</div>
+      <div className='score-pill player-score'>You: {playerScore}</div>
+      <div className='score-pill draws-score'>Draws: {numOfDraw}</div>
+      <div className='score-pill bot-score'>Boo: {botScore}</div>
     </div>
   )
 }
